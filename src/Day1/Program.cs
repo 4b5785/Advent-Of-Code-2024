@@ -19,7 +19,7 @@ for (int i = 0; i < dataLength; i++)
     right[i] = int.Parse(parts[1]);
 }
 
-var grouped = right.GroupBy(x => x);
+var groupedRight = right.GroupBy(x => x);
 
 Array.Sort(left);
 Array.Sort(right);
@@ -30,7 +30,7 @@ long part2Result = 0;
 for (int i = 0; i < dataLength; i++)
 {
     part1Result += Math.Abs(left[i] - right[i]);
-    part2Result += left[i] * grouped.FirstOrDefault(x => x.Key == left[i])?.Count() ?? 0;
+    part2Result += left[i] * groupedRight.FirstOrDefault(x => x.Key == left[i])?.Count() ?? 0;
 }
 
 Console.WriteLine($"Part 1: {part1Result}, Part 2: {part2Result} in {stopwatch.ElapsedMilliseconds}ms.");
