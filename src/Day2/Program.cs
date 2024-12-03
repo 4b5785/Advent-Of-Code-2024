@@ -3,7 +3,7 @@
 Stopwatch stopwatch = Stopwatch.StartNew();
 
 var delimiter = " ";
-var path = Directory.GetCurrentDirectory() + "//inputData.csv";
+var path = Directory.GetCurrentDirectory() + "//inputData.txt";
 var data = File.ReadAllLines(path);
 
 var dataLength = data.Length;
@@ -12,7 +12,7 @@ var minLevelStep = 1;
 var maxLevelStep = 3;
 
 int part1Result = 0;
-long part2Result = 0;
+int part2Result = 0;
 
 var reports = data.Select(x => x.Split(delimiter).Select(int.Parse).ToArray()).ToArray();
 
